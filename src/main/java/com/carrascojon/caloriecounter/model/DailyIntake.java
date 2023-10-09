@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "daily_intake")
@@ -25,7 +26,13 @@ public class DailyIntake {
     @ManyToOne
     private User user;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "daily_intake_id")
+    private List<FoodItem> consumedFoods;
+
     private double totalCarbs;
     private double totalCalories;
     private double totalProtein;
+
+
 }

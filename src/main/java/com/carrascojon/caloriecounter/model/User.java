@@ -25,5 +25,14 @@ public class User {
     private double height;
     private double targetWeight;
 
+    public User(String name, String age, double weight, double height, double targetWeight){
+        this.name = name;
+        this.age  = age;
+        this.weight = weight;
+        this.height= height;
+        this.targetWeight = targetWeight;
+    }
+
+
 
 }
