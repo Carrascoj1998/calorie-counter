@@ -2,7 +2,6 @@ package com.carrascojon.caloriecounter.controller;
 
 import com.carrascojon.caloriecounter.model.User;
 import com.carrascojon.caloriecounter.model.dto.UserDTO;
-import com.carrascojon.caloriecounter.service.UserService;
 import com.carrascojon.caloriecounter.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -39,7 +38,7 @@ public class UserController {
         return Optional.ofNullable(userService.saveUser(user));
     }
 
-    @PatchMapping("{id}")
+    @PatchMapping("/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void patchUser(@PathVariable Long id, @RequestBody UserDTO userDTO){
         userService.patchUser(id, userDTO);

@@ -1,6 +1,8 @@
 package com.carrascojon.caloriecounter.config;
 
+import com.carrascojon.caloriecounter.model.FoodItem;
 import com.carrascojon.caloriecounter.model.User;
+import com.carrascojon.caloriecounter.repository.FoodItemRepository;
 import com.carrascojon.caloriecounter.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
@@ -8,18 +10,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class UserSeedData implements CommandLineRunner {
+public class ApplicationSeedData implements CommandLineRunner {
 
     private final UserRepository userRepository;
+    private final FoodItemRepository foodItemRepository;
 
-    /*
-    private String name;
-    private String age;
-    private double weight;
-    private double height;
-    private double targetWeight;
 
-     */
 
 
     @Override
@@ -30,6 +26,15 @@ public class UserSeedData implements CommandLineRunner {
 
         userRepository.save(user1);
         userRepository.save(user2);
+
+        FoodItem foodItem1 = new FoodItem("Ham Sandwich" , 355 , 9, 25 );
+        FoodItem foodItem2 = new FoodItem("Cookies", 90, 1, 5);
+        FoodItem foodItem3 = new FoodItem("Yogurt", 130, 4, 2);
+
+        foodItemRepository.save(foodItem1);
+        foodItemRepository.save(foodItem2);
+        foodItemRepository.save(foodItem3);
+
 
     }
 }

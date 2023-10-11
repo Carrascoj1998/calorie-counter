@@ -22,4 +22,11 @@ public class FoodItem {
     private double calories;
     private double carbs;
     private double protein;
+
+    public FoodItem(String itemName, double calories, double carbs, double protein) {
+        this.itemName = itemName;
+        this.calories = calories;
+        this.carbs = carbs;
+        this.protein = protein;
+    }
 }
