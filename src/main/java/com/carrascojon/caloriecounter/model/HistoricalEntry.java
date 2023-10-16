@@ -25,8 +25,8 @@ public class HistoricalEntry {
     @ManyToOne
     private User user;
 
-    private double totalCalories;
-    private double totalCarbs;
-    private double totalProtein;
+    private Integer totalCalories;
+    private Integer totalCarbs;
+    private Integer totalProtein;
 
 }

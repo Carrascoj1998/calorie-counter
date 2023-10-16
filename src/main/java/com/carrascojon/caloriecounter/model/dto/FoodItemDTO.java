@@ -8,7 +8,7 @@ import lombok.Setter;
 public class FoodItemDTO {
 
     private String itemName;
-    private Double calories;
-    private Double carbs;
-    private Double protein;
+    private Integer calories;
+    private Integer carbs;
+    private Integer protein;
 }

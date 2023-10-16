@@ -30,9 +30,24 @@ public class DailyIntake {
     @JoinColumn(name = "daily_intake_id")
     private List<FoodItem> consumedFoods;
 
-    private double totalCarbs;
-    private double totalCalories;
-    private double totalProtein;
+    private Integer totalCarbs;
+    private Integer totalCalories;
+    private Integer totalProtein;
+
+
+    public DailyIntake( LocalDate date, User user, List<FoodItem> consumedFoods,
+                       Integer totalCarbs, Integer totalCalories, Integer totalProtein) {
+
+        this.user=user;
+        this.date = date;
+        this.consumedFoods = consumedFoods;
+        this.totalCarbs = totalCarbs;
+        this.totalCalories = totalCalories;
+        this.totalProtein = totalProtein;
+    }
+
+
+
 
 
 }

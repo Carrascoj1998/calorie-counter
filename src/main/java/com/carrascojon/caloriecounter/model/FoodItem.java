@@ -19,11 +19,11 @@ public class FoodItem {
     private long id;
 
     private String itemName;
-    private double calories;
-    private double carbs;
-    private double protein;
+    private Integer calories;
+    private Integer carbs;
+    private Integer protein;
 
-    public FoodItem(String itemName, double calories, double carbs, double protein) {
+    public FoodItem(String itemName, Integer calories, Integer carbs, Integer protein) {
         this.itemName = itemName;
         this.calories = calories;
         this.carbs = carbs;
