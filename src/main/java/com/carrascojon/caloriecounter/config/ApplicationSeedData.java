@@ -1,12 +1,17 @@
 package com.carrascojon.caloriecounter.config;
 
+import com.carrascojon.caloriecounter.model.DailyIntake;
 import com.carrascojon.caloriecounter.model.FoodItem;
 import com.carrascojon.caloriecounter.model.User;
+import com.carrascojon.caloriecounter.repository.DailyIntakeRepository;
 import com.carrascojon.caloriecounter.repository.FoodItemRepository;
 import com.carrascojon.caloriecounter.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
@@ -14,6 +19,9 @@ public class ApplicationSeedData implements CommandLineRunner {
 
     private final UserRepository userRepository;
     private final FoodItemRepository foodItemRepository;
+    private final DailyIntakeRepository dailyIntakeRepository;
+
+
 
 
 
@@ -34,7 +42,5 @@ public class ApplicationSeedData implements CommandLineRunner {
         foodItemRepository.save(foodItem1);
         foodItemRepository.save(foodItem2);
         foodItemRepository.save(foodItem3);
-
-
     }
 }

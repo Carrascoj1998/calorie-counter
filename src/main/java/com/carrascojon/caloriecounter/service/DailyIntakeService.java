@@ -10,7 +10,7 @@ public interface DailyIntakeService {
 
     Optional<DailyIntake> getDailyIntakeById(Long id);
 
-    List<DailyIntake> findByUser(User user);
+    List<DailyIntake> findDailyIntakeByUser(User user);
 
     Iterable<DailyIntake> getAllDailyIntakes();
 

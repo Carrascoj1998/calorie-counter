@@ -34,7 +34,7 @@ public class DailyIntakeServiceImpl implements DailyIntakeService {
     }
 
     @Override
-    public List<DailyIntake> findByUser(User user) {
+    public List<DailyIntake> findDailyIntakeByUser(User user) {
         return dailyIntakeRepository.findByUser(user);
     }
 

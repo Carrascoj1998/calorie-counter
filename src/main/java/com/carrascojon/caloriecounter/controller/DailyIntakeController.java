@@ -9,7 +9,6 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -34,13 +33,13 @@ public class DailyIntakeController {
         return dailyIntakeService.getAllDailyIntakes();
     }
 
-//    @GetMapping("/user/{userId}") // Define a new endpoint that takes the user's ID
-//    @ResponseStatus(HttpStatus.ACCEPTED)
-//    public List<DailyIntake> getDailyIntakesForUser(@PathVariable Long userId) {
-//        User user = userService.findById(userId)
-//                .orElseThrow(() -> new EntityNotFoundException("User not found"));
-//        return dailyIntakeService.getDailyIntakesForUser(user);
-//    }
+    @GetMapping("/user/{id}") // Define a new endpoint that takes the user's ID
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public List<DailyIntake> getDailyIntakesForUser(@PathVariable Long id) {
+        User user = userService.getUserById(id)
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+        return dailyIntakeService.findDailyIntakeByUser(user);
+    }
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
